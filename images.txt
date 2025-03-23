@@ -6,3 +6,7 @@ ddsderek/easyimage:latest
 linuxserver/freshrss:latest
 diygod/rsshub:latest
 redis:latest
+whyour/qinglong:latest
+linuxserver/transmission:latest
+linuxserver/qbittorrent:latest
+homeassistant/home-assistant:stable
