@@ -3,5 +3,6 @@ nextcloud:stable
 linuxserver/heimdall:latest
 halcyonazure/lsky-pro-docker:latest
 ddsderek/easyimage:latest
-freshrss/freshrss:latest
+linuxserver/freshrss:latest
 diygod/rsshub:latest
+redis:latest
