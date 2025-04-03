@@ -11,3 +11,4 @@ linuxserver/transmission:latest
 linuxserver/qbittorrent:latest
 homeassistant/home-assistant:stable
 gdy666/lucky:latest
+xiuxiu10201/115:latest
