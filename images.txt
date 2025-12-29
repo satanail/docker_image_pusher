@@ -13,3 +13,5 @@ homeassistant/home-assistant:stable
 gdy666/lucky:latest
 xiuxiu10201/115:latest
 nyanmisaka/jellyfin:latest
+openlistteam/openlist:latest
+rclone/rclone:latest
