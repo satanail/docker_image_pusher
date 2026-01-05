@@ -15,3 +15,5 @@ xiuxiu10201/115:latest
 nyanmisaka/jellyfin:latest
 openlistteam/openlist:latest
 rclone/rclone:latest
+wantcat/trendradar:latest
+wantcat/trendradar-mcp:latest
