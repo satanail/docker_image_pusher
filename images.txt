@@ -18,3 +18,4 @@ rclone/rclone:latest
 wantcat/trendradar:latest
 wantcat/trendradar-mcp:latest
 linuxserver/jackett:latest
+wu529778790/panhub.shenzjd.com:latest
