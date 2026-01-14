@@ -17,3 +17,4 @@ openlistteam/openlist:latest
 rclone/rclone:latest
 wantcat/trendradar:latest
 wantcat/trendradar-mcp:latest
+linuxserver/jackett:latest
