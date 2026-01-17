@@ -20,3 +20,4 @@ wantcat/trendradar-mcp:latest
 linuxserver/jackett:latest
 wu529778790/panhub.shenzjd.com:latest
 ghcr.io/fish2018/pansou-web
+mzz2017/v2raya:latest
