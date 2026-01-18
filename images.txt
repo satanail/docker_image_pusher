@@ -1,5 +1,5 @@
 vaultwarden/server:latest
-nextcloud:stable
+linuxserver/nextcloud:latest
 linuxserver/heimdall:latest
 halcyonazure/lsky-pro-docker:latest
 ddsderek/easyimage:latest
