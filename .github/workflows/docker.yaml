@@ -42,15 +42,20 @@ jobs:
 
     - name: Relocate Containerd
       run: |
-        # 停止服务并迁移数据
-        sudo service docker stop
+        # 停止 docker 和相关 socket 服务，确保文件不被占用
+        # 停止所有相关服务
+        sudo systemctl stop docker.service docker.socket containerd.service
         # 创建目标存储目录
         sudo mkdir -p /var/lib/docker/containerd_storage
         # 如果不是软链接则执行迁移
         if [ ! -L /var/lib/containerd ]; then
-          # 移动现有数据到大分区
-          sudo mv /var/lib/containerd/* /var/lib/docker/containerd_storage/ || true
-          # 删除原目录并建立软链接指向大分区
+          # 检查源目录是否包含文件，避免通配符报错
+          # 检查目录是否非空
+          if [ "$(ls -A /var/lib/containerd)" ]; then
+            # 移动所有内容到大分区
+            sudo mv /var/lib/containerd/* /var/lib/docker/containerd_storage/ || true
+          fi
+          # 删除原目录（此时应为空或已备份）
           sudo rm -rf /var/lib/containerd
           # 建立链接
           sudo ln -s /var/lib/docker/containerd_storage /var/lib/containerd
