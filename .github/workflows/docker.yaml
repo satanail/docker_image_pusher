@@ -40,6 +40,22 @@ jobs:
         remove-codeql: 'true'
         build-mount-path: '/var/lib/docker/'
 
+    - name: Relocate Containerd
+      run: |
+        # 停止服务并迁移数据
+        sudo service docker stop
+        # 创建目标存储目录
+        sudo mkdir -p /var/lib/docker/containerd_storage
+        # 如果不是软链接则执行迁移
+        if [ ! -L /var/lib/containerd ]; then
+          # 移动现有数据到大分区
+          sudo mv /var/lib/containerd/* /var/lib/docker/containerd_storage/ || true
+          # 删除原目录并建立软链接指向大分区
+          sudo rm -rf /var/lib/containerd
+          # 建立链接
+          sudo ln -s /var/lib/docker/containerd_storage /var/lib/containerd
+        fi
+        
     - name: Restart docker
       run: sudo service docker restart
 
@@ -150,6 +166,8 @@ jobs:
             echo "=============================================================================="
             docker rmi $image
             docker rmi $new_image
+            # 强制清理 Docker 缓存和残留层数据
+            docker system prune -f
             echo "磁盘空间清理完毕"
             echo "=============================================================================="
             df -hT
