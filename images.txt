@@ -24,3 +24,4 @@ mzz2017/v2raya:latest
 jlesage/czkawka:latest
 ghcr.io/lakr233/assppweb:latest
 portainer/portainer-ce:latest
+deluan/navidrome:latest
