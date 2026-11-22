@@ -147,7 +147,8 @@ jobs:
             image_name_tag="${image_name_tag%%@*}"
             new_image="$ALIYUN_REGISTRY/$ALIYUN_NAME_SPACE/$platform_prefix$name_space_prefix$image_name_tag"
             echo "skopeo copy --remove-signatures docker://$image docker://$new_image"
-            skopeo copy --remove-signatures \
+            # 在 skopeo copy 命令中，增加 --format v2s2 参数
+            skopeo copy --format v2s2 --remove-signatures \
               --dest-creds "$ALIYUN_REGISTRY_USER:$ALIYUN_REGISTRY_PASSWORD" \
               "docker://$image" \
               "docker://$new_image"
