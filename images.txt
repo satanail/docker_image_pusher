@@ -25,3 +25,4 @@ jlesage/czkawka:latest
 ghcr.io/lakr233/assppweb:latest
 portainer/portainer-ce:latest
 deluan/navidrome:latest
+ghcr.io/getarcaneapp/manager:latest
